@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>10xTube Privacy Practices</title>
+  <meta name="description" content="Privacy practices for the 10xTube Chrome extension.">
+  <link rel="icon" href="assets/icon-128.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="./">
+        <img src="assets/icon-128.png" alt="" width="36" height="36">
+        <span>10xTube</span>
+      </a>
+      <div class="nav-links">
+        <a href="./privacy.html">Privacy</a>
+        <a href="./support.html">Support</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="content">
+    <p class="eyebrow">Privacy practices</p>
+    <h1>10xTube Privacy</h1>
+    <p class="lead">10xTube is distributed by Obsessive Coders, Inc. It runs locally in the user's browser and does not run a backend server operated by Obsessive Coders, Inc.</p>
+
+    <h2>Data Access</h2>
+    <p>10xTube can access YouTube pages where it is installed because it needs to:</p>
+    <ul>
+      <li>Add Summary buttons and panels.</li>
+      <li>Read YouTube page data needed to find the native Ask summary request.</li>
+      <li>Request the selected video's Ask summary from YouTube.</li>
+      <li>Seek the active video when the user clicks timestamp links.</li>
+    </ul>
+
+    <h2>Data Transmission</h2>
+    <p>10xTube sends summary requests from the user's browser session to YouTube.</p>
+    <p>If the user clicks Listen, 10xTube sends generated speech synthesis input to Azure Speech using the user's configured Azure Speech key and region.</p>
+    <p>10xTube does not send summary text, Azure settings, or YouTube page data to a server operated by Obsessive Coders, Inc.</p>
+
+    <h2>Data Storage</h2>
+    <p>10xTube stores optional Azure Speech settings in Chrome extension storage:</p>
+    <ul>
+      <li>Azure Speech key.</li>
+      <li>Azure region.</li>
+      <li>Speech language.</li>
+      <li>Voice.</li>
+      <li>Speaking rate.</li>
+      <li>Pitch.</li>
+    </ul>
+    <p>Summary text and generated audio are cached only in the current page's extension runtime state to support the active summary surface and reload behavior.</p>
+
+    <h2>Diagnostics</h2>
+    <p>During early testing, 10xTube writes diagnostic events to the browser console and a page attribute for debugging. Diagnostics are designed to avoid raw cookies, authorization headers, Azure keys, full InnerTube payloads, and raw continuation tokens.</p>
+
+    <h2>Third Parties</h2>
+    <p>10xTube interacts with YouTube for the native Ask summary flow and Azure Speech only when the user enables and uses Listen.</p>
+    <p>10xTube is not affiliated with YouTube, Google, Microsoft, or Azure.</p>
+  </main>
+
+  <footer class="site-footer">
+    Copyright (c) 2026 Obsessive Coders, Inc.
+  </footer>
+</body>
+</html>
