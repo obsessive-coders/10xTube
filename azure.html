@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Get a Free Azure Speech Key — 10xTube</title>
+  <meta name="description" content="Step-by-step guide to creating a free Azure account, creating a Speech service resource on the free F0 tier, and getting the API key for 10xTube's Listen feature.">
+  <link rel="icon" href="assets/icon-128.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="./">
+        <img src="assets/icon-128.png" alt="" width="36" height="36">
+        <span>10xTube</span>
+      </a>
+      <div class="nav-links">
+        <a href="./listen.html">Listen</a>
+        <a href="./privacy.html">Privacy</a>
+        <a href="./support.html">Support</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="content">
+    <p class="eyebrow">Guide</p>
+    <h1>Get a Free Azure Speech Key</h1>
+    <p class="lead">10xTube's <a href="./listen.html">Listen feature</a> can narrate summaries with high-quality Azure neural voices. That requires your own Azure Speech API key. This guide walks you through getting one on Azure's free tier.</p>
+
+    <div class="note">
+      <p>The whole process takes about 10 minutes. You will need a Microsoft account and, for identity verification, a credit or debit card. On the free tier the card is there for verification only, and nothing in this guide should cost money — but please read on:</p>
+      <p><strong>Please know:</strong> 10xTube is not affiliated with Microsoft or Azure, and we don't earn anything if you sign up. We describe this option because, at the time of this extension's release, Azure offered a generous free monthly text-to-speech allowance. Microsoft can change its terms, limits, and pricing at any time, and any charges on your Azure account are strictly between you and Microsoft — always confirm the current terms on Microsoft's own pages.</p>
+    </div>
+
+    <h2>Step 1 — Create a Free Azure Account</h2>
+    <p>Skip this step if you already have an Azure account.</p>
+    <ol>
+      <li>Go to <a href="https://azure.microsoft.com/free" target="_blank" rel="noopener">azure.microsoft.com/free</a> and click <strong>Start free</strong> (or <strong>Try Azure for free</strong>).</li>
+      <li>Sign in with a Microsoft account, or create one if you don't have it (any email address works).</li>
+      <li>Fill in your profile details: country, name, and phone number for verification by text or call.</li>
+      <li>Add a credit or debit card. This is only for identity verification — Azure does not charge you unless you later explicitly upgrade to pay-as-you-go and exceed free limits.</li>
+      <li>Agree to the terms and finish sign-up. You'll land in the Azure Portal at <a href="https://portal.azure.com" target="_blank" rel="noopener">portal.azure.com</a>.</li>
+    </ol>
+
+    <h2>Step 2 — Create a Speech Service Resource (Free F0 Tier)</h2>
+    <ol>
+      <li>In the <a href="https://portal.azure.com" target="_blank" rel="noopener">Azure Portal</a>, click <strong>Create a resource</strong> (the big + icon on the home page).</li>
+      <li>In the search box, type <strong>Speech</strong> and select <strong>Speech</strong> by Microsoft (part of Azure AI services). Click <strong>Create</strong>.</li>
+      <li>Fill in the creation form:
+        <ul>
+          <li><strong>Subscription</strong> — your free subscription (usually "Azure subscription 1" or "Free Trial").</li>
+          <li><strong>Resource group</strong> — click <strong>Create new</strong> and name it anything, e.g. <code>10xtube</code>.</li>
+          <li><strong>Region</strong> — pick a region close to you, e.g. <strong>West US 2</strong>. Remember your choice — 10xTube needs it in Step 4. The region's short identifier looks like <code>westus2</code>, <code>eastus</code>, or <code>westeurope</code>.</li>
+          <li><strong>Name</strong> — anything unique, e.g. <code>10xtube-speech</code>.</li>
+          <li><strong>Pricing tier</strong> — select <strong>Free (F0)</strong>. This is the important one: at the time of writing, F0 costs nothing and includes about 0.5&nbsp;million characters of neural text-to-speech per month — plenty for narrating summaries. (If F0 isn't listed, you may already have another free Speech resource; each subscription allows one F0 Speech resource.)</li>
+        </ul>
+      </li>
+      <li>Click <strong>Review + create</strong>, then <strong>Create</strong>. Deployment takes under a minute.</li>
+      <li>When it says "Your deployment is complete", click <strong>Go to resource</strong>.</li>
+    </ol>
+
+    <h2>Step 3 — Copy Your API Key and Region</h2>
+    <ol>
+      <li>On your Speech resource page, look in the left menu under <strong>Resource Management</strong> and click <strong>Keys and Endpoint</strong>.</li>
+      <li>You'll see <strong>KEY 1</strong>, <strong>KEY 2</strong>, and <strong>Location/Region</strong>. Click the copy icon next to <strong>KEY 1</strong>. Either key works — two exist so you can rotate them.</li>
+      <li>Note the <strong>Location/Region</strong> value shown on the same page (e.g. <code>westus2</code>). This is exactly what 10xTube needs.</li>
+    </ol>
+
+    <div class="note">
+      <p><strong>Keep your key private.</strong> Anyone with the key can use your Speech quota. Don't share it or paste it into websites other than the Azure Portal and 10xTube's settings, which stores it only in your browser's local extension storage.</p>
+    </div>
+
+    <h2>Step 4 — Enter the Key in 10xTube</h2>
+    <ol>
+      <li>Open 10xTube's settings: summarize any YouTube video, then click the <strong>gear icon</strong> next to the Listen button.</li>
+      <li>Set <strong>Narration Engine</strong> to <strong>Azure API</strong>.</li>
+      <li>Paste your key into the <strong>Azure Speech Key</strong> field.</li>
+      <li>Enter your region's short identifier (e.g. <code>westus2</code>) in the <strong>Region</strong> field.</li>
+      <li>Once the key and region are accepted, the <strong>Language</strong> and <strong>Voice</strong> pickers fill with Azure's neural voice catalog. Pick a voice and use the preview button to hear a sample. Settings save automatically.</li>
+    </ol>
+    <p>That's it — press <strong>Listen</strong> on a summary and it will be narrated with your chosen Azure voice, with the same player controls as the built-in voice: previous, play/pause, and next section.</p>
+
+    <h2>Troubleshooting</h2>
+    <ul>
+      <li><strong>"Azure rejected the key"</strong> — re-copy the key from <strong>Keys and Endpoint</strong> and double-check the region matches the resource's <strong>Location/Region</strong> value exactly (short form, no spaces: <code>westus2</code>, not "West US 2").</li>
+      <li><strong>Voices won't load</strong> — check your internet connection, then verify both the key and region fields.</li>
+      <li><strong>Narration stops working after heavy use</strong> — the F0 tier has a monthly quota (about 0.5&nbsp;million characters of neural text-to-speech at the time of writing). It resets each month, or you can upgrade the resource's pricing tier in the Azure Portal — upgraded tiers are paid, billed by Microsoft to your Azure account.</li>
+      <li>Still stuck? See the <a href="./support.html">Support page</a> for how to reach us.</li>
+    </ul>
+  </main>
+
+  <footer class="site-footer">
+    Copyright (c) 2026 Obsessive Coders, Inc.
+  </footer>
+</body>
+</html>

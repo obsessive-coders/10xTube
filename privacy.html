@@ -16,6 +16,7 @@
         <span>10xTube</span>
       </a>
       <div class="nav-links">
+        <a href="./listen.html">Listen</a>
         <a href="./privacy.html">Privacy</a>
         <a href="./support.html">Support</a>
       </div>
@@ -42,19 +43,18 @@
     <p>10xTube does not send summary text, Azure settings, or YouTube page data to a server operated by Obsessive Coders, Inc.</p>
 
     <h2>Data Storage</h2>
-    <p>10xTube stores optional Azure Speech settings in Chrome extension storage:</p>
+    <p>10xTube stores narration settings in browser extension storage:</p>
     <ul>
-      <li>Azure Speech key.</li>
-      <li>Azure region.</li>
-      <li>Speech language.</li>
-      <li>Voice.</li>
-      <li>Speaking rate.</li>
-      <li>Pitch.</li>
+      <li>Chosen voice engine (browser built-in or Azure) and voice selection mode.</li>
+      <li>Voice selections, including per-language voice choices.</li>
+      <li>Shared speaking rate.</li>
+      <li>Narration timing calibration (millisecond latency averages; no content).</li>
+      <li>Azure Speech key, region, language, and voice — only if the user configures the optional Azure engine.</li>
     </ul>
     <p>Summary text and generated audio are cached only in the current page's extension runtime state to support the active summary surface and reload behavior.</p>
 
     <h2>Diagnostics</h2>
-    <p>During early testing, 10xTube writes diagnostic events to the browser console and a page attribute for debugging. Diagnostics are designed to avoid raw cookies, authorization headers, Azure keys, full InnerTube payloads, and raw continuation tokens.</p>
+    <p>Store builds of 10xTube ship with diagnostics disabled: no console logging, no page attributes, no version badge. Development builds used for testing write diagnostic events to the browser console and a page attribute; even there, diagnostics are designed to exclude raw cookies, authorization headers, Azure keys, full InnerTube payloads, and raw continuation tokens.</p>
 
     <h2>Third Parties</h2>
     <p>10xTube interacts with YouTube for the native Ask summary flow and Azure Speech only when the user enables and uses Listen.</p>
