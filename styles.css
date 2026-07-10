@@ -224,3 +224,21 @@ li {
     flex-direction: column;
   }
 }
+
+/* Guide screenshots */
+figure.screenshot {
+  margin: 20px 0 28px;
+}
+figure.screenshot img {
+  display: block;
+  max-width: min(420px, 100%);
+  height: auto;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+}
+figure.screenshot figcaption {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  color: #5f6368;
+}
